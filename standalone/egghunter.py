@@ -1,4 +1,13 @@
 #!/usr/bin/python3
+
+"""
+egghunter.py — x86 egghunter generator (OSED-oriented)
+
+Author: Atlas Gondal
+Copyright (c) 2025 Atlas Gondal
+License: MIT (see repository LICENSE)
+"""
+
 import sys
 import argparse
 import keystone as ks
