@@ -21,9 +21,9 @@ Generates an x86 egghunter compatible with the OSED lab VM. Supports:
 
 ### Install
 
-````bash
+```bash
 pip3 install keystone-engine numpy
-`````
+```
 
 ### Usage
 
@@ -45,18 +45,18 @@ optional arguments:
 ./egghunter.py                              # generate default egghunter
 ./egghunter.py --tag w00t                   # generate egghunter with w00tw00t tag
 ./egghunter.py -b 00 0a 25 26 3d --seh      # generate SEH-based egghunter while checking for bad characters (does not alter the shellcode, that's to be done manually)
-`````
+```
 
 ## Find Gadgets
 Finds and categorizes useful gadgets. Only prints to terminal the cleanest gadgets available (minimal amount of garbage between what's searched for and the final ret instruction). All gadgets are written to a text file for further searching.
+
+**Script:** [`find-gadgets.py`](find-gadgets.py)
 
 ### Install
 
 ```bash
 pip3 install rich ropper
 ```
-
-**Script:** [`find-gadgets.py`](find-gadgets.py)
 
 ### Usage
 
@@ -82,7 +82,7 @@ optional arguments:
 ./find-gadgets.py -f a.dll b.dll -b 00 0a   # search gadgets in multiple files
 ./find-gadgets.py -f a.dll b.dll -b 00 0a   # search gadgets in multiple files
 ./find-gadgets.py -f libspp.dll:0x10000000  # specify an image base for a module
-````
+```
 
 ## Shellcoder
 Creates reverse shell with optional msi loader
@@ -91,6 +91,7 @@ Creates reverse shell with optional msi loader
 usage: shellcoder.py [-h] [-l LHOST] [-p LPORT] [-b BAD_CHARS [BAD_CHARS ...]] [-m] [-d] [-t] [-s]
 
 Creates shellcodes compatible with the OSED lab VM
+```
 
 **Script:** [`shellcoder.py`](shellcoder.py)
 
