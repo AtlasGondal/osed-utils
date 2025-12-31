@@ -1,4 +1,13 @@
 #!/usr/bin/env python3
+
+"""
+search.py — Memory search utility for windbg (OSED-oriented)
+
+Author: Atlas Gondal
+Copyright (c) 2025 Atlas Gondal
+License: MIT (see repository LICENSE)
+"""
+
 import argparse
 
 import pykd

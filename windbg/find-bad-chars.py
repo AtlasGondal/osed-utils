@@ -1,3 +1,14 @@
+#!/usr/bin/env python3
+
+"""
+find-bad-chars.py — Bad character finder for windbg (OSED-oriented)
+
+Author: Atlas Gondal
+Copyright (c) 2025 Atlas Gondal
+License: MIT (see repository LICENSE)
+"""
+
+
 import pykd
 import argparse
 
