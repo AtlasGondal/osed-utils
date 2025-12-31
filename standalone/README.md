@@ -54,7 +54,9 @@ Finds and categorizes useful gadgets. Only prints to terminal the cleanest gadge
 
 ```bash
 pip3 install rich ropper
-`````
+```
+
+**Script:** [`find-gadgets.py`](find-gadgets.py)
 
 ### Usage
 
@@ -86,9 +88,11 @@ optional arguments:
 Creates reverse shell with optional msi loader
 
 ```bash
-usage: shellcode.py [-h] [-l LHOST] [-p LPORT] [-b BAD_CHARS [BAD_CHARS ...]] [-m] [-d] [-t] [-s]
+usage: shellcoder.py [-h] [-l LHOST] [-p LPORT] [-b BAD_CHARS [BAD_CHARS ...]] [-m] [-d] [-t] [-s]
 
 Creates shellcodes compatible with the OSED lab VM
+
+**Script:** [`shellcoder.py`](shellcoder.py)
 
 ### Usage
 optional arguments:
@@ -108,8 +112,8 @@ optional arguments:
 
 #### Examples
 ```bash
-python3 shellcode.py                            # generate a reverse shell payload (defaults: 127.0.0.1:4444)
-python3 shellcode.py -l 127.0.0.1 -p 3333       # generate a reverse shell for specific listener
-python3 shellcode.py --msi -l 127.0.0.1 -s      # generate MSI stager and store raw bytes
+python3 shellcoder.py                            # generate a reverse shell payload (defaults: 127.0.0.1:4444)
+python3 shellcoder.py -l 127.0.0.1 -p 3333       # generate a reverse shell for specific listener
+python3 shellcoder.py --msi -l 127.0.0.1 -s      # generate MSI stager and store raw bytes
 python3 shellcoder.py -t                        # test-run the shellcode (only works when run from 32-bit Python environment)
 ```
